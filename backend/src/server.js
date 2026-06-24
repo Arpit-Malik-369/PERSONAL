@@ -9,5 +9,13 @@ app.get("/", (req, res)=> {
     res.status(200).json({msg :"success from api"})
 })
 
+app.get("/health", (req, res) => {
+  res.status(200).json({ msg: "api is up and running" });
+});
 
-app.listen(ENV.PORT, () => console.log("server is running on port ENV.PORT"))
+app.get("/books", (req, res) => {
+  res.status(200).json({ msg: "this is the books endpoint" });
+});
+
+
+app.listen(ENV.PORT, () => console.log('server is running on port ${ENV.PORT}'))
